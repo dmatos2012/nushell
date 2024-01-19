@@ -592,3 +592,21 @@ fn mv_files_with_glob_metachars(#[case] src_name: &str) {
 fn mv_files_with_glob_metachars_nw(#[case] src_name: &str) {
     mv_files_with_glob_metachars(src_name);
 }
+#[test]
+fn umv_with_cd() {
+    Playground::setup("umv_test_15", |_dirs, sandbox| {
+        sandbox
+            .mkdir("tmp_dir")
+            .mkdir("tmp_dir/foo")
+            .with_files(vec![FileWithContent("tmp_dir/foo/bar.txt", "body")]);
+
+        let actual = nu!(
+            cwd: sandbox.cwd(),
+            r#"do { cd tmp_dir; umv ("foo" | path join "bar.txt") ..}; open bar.txt"#,
+        );
+
+        assert!(sandbox.cwd().join("bar.txt").exists());
+        assert!(actual.out.contains("body"));
+        assert!(!sandbox.cwd().join("tmp_dir/foo/bar.txt").exists());
+    });
+}
