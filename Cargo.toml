@@ -216,6 +216,7 @@ unicode-width = "0.2"
 ureq = { version = "~3.3.0", default-features = false, features = ["socks-proxy"] }
 url = "2.5"
 uu_cp = "0.8.0"
+uu_ln =  {git = "https://github.com/uutils/coreutils"}
 uu_mkdir = "0.8.0"
 uu_mktemp = "0.8.0"
 uu_mv = "0.8.0"

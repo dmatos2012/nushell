@@ -119,6 +119,7 @@ mod to_text;
 mod transpose;
 mod try_;
 mod ucp;
+mod uln;
 #[cfg(unix)]
 mod ulimit;
 #[cfg(unix)]

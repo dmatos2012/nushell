@@ -4305,6 +4305,7 @@ dependencies = [
  "fancy-regex",
  "filesize",
  "filetime",
+ "fluent",
  "fuzzy-matcher",
  "getrandom 0.4.2",
  "http 1.4.0",
@@ -4384,13 +4385,14 @@ dependencies = [
  "ureq",
  "url",
  "uu_cp",
+ "uu_ln",
  "uu_mkdir",
  "uu_mktemp",
  "uu_mv",
  "uu_touch",
  "uu_uname",
  "uu_whoami",
- "uucore",
+ "uucore 0.8.0",
  "uuid",
  "v_htmlescape",
  "wax",
@@ -4725,7 +4727,7 @@ dependencies = [
  "nu-utils",
  "procfs",
  "sysinfo",
- "uucore",
+ "uucore 0.8.0",
  "web-time",
  "windows 0.62.2",
 ]
@@ -8979,8 +8981,18 @@ dependencies = [
  "libc",
  "nix 0.31.2",
  "thiserror 2.0.18",
- "uucore",
+ "uucore 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "walkdir",
+]
+
+[[package]]
+name = "uu_ln"
+version = "0.8.0"
+dependencies = [
+ "clap",
+ "fluent",
+ "thiserror 2.0.18",
+ "uucore 0.8.0",
 ]
 
 [[package]]
@@ -8992,7 +9004,7 @@ dependencies = [
  "clap",
  "fluent",
  "rustix 1.1.4",
- "uucore",
+ "uucore 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -9006,7 +9018,7 @@ dependencies = [
  "rand 0.10.1",
  "tempfile",
  "thiserror 2.0.18",
- "uucore",
+ "uucore 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -9022,7 +9034,7 @@ dependencies = [
  "libc",
  "rustc-hash",
  "thiserror 2.0.18",
- "uucore",
+ "uucore 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "windows-sys 0.61.2",
 ]
 
@@ -9040,7 +9052,7 @@ dependencies = [
  "parse_datetime",
  "rustix 1.1.4",
  "thiserror 2.0.18",
- "uucore",
+ "uucore 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "windows-sys 0.61.2",
 ]
 
@@ -9053,7 +9065,7 @@ dependencies = [
  "clap",
  "fluent",
  "platform-info",
- "uucore",
+ "uucore 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -9064,7 +9076,28 @@ checksum = "87bf65bdd9e21258dd484aeb7567f5f833c486ed84ba5aa4fe3b1a93a20e7cee"
 dependencies = [
  "clap",
  "fluent",
- "uucore",
+ "uucore 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "uucore"
+version = "0.8.0"
+dependencies = [
+ "clap",
+ "dunce",
+ "fluent",
+ "fluent-syntax",
+ "libc",
+ "nix 0.31.2",
+ "os_display",
+ "rustc-hash",
+ "rustix 1.1.4",
+ "thiserror 2.0.18",
+ "unic-langid",
+ "uucore_procs 0.8.0",
+ "wild",
+ "winapi-util",
  "windows-sys 0.61.2",
 ]
 
@@ -9091,12 +9124,20 @@ dependencies = [
  "rustix 1.1.4",
  "thiserror 2.0.18",
  "unic-langid",
- "uucore_procs",
+ "uucore_procs 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "walkdir",
  "wild",
  "winapi-util",
  "windows-sys 0.61.2",
  "xattr",
+]
+
+[[package]]
+name = "uucore_procs"
+version = "0.8.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
 ]
 
 [[package]]
